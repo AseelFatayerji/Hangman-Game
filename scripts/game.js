@@ -43,7 +43,7 @@ function reset() {
     word = words[random].toUpperCase();
     ans = [word.length];
     setword();
-  }, 20000);
+  }, 30000);
 }
 
 let words = [
