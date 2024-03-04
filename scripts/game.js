@@ -38,12 +38,11 @@ function add_letter(letter) {
   }
 }
 function reset() {
+  console.log("lose");
   setTimeout(() => {
-    random = Math.floor(Math.random() * 25);
-    word = words[random].toUpperCase();
-    ans = [word.length];
+    location.reload()
     setword();
-  }, 30000);
+  }, 200000000);
 }
 
 let words = [
