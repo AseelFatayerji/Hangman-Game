@@ -38,20 +38,12 @@ function add_letter(letter) {
   }
 }
 function reset() {
-  let lose = document.createElement("div");
-  lose.style.position = "fixed";
-  lose.style.top = "150px";
-  lose.style.fontFamily = "Roboto";
-  lose.style.padding = "10px";
-  lose.style.color = "#5d63b9";
-  lose.id = "lose";
-  lose.innerHTML = "<h1> YOU LOSE!!!! </h1>";
-  document.body.appendChild(lose);
-  console.log("lose");
   setTimeout(() => {
-    location.reload()
+    random = Math.floor(Math.random() * 25);
+    word = words[random].toUpperCase();
+    ans = [word.length];
     setword();
-  }, 200000000);
+  }, 20000);
 }
 
 let words = [
