@@ -1,50 +1,3 @@
-function setword() {
-  for (let i = 0; i < word.length; i++) {
-    container.innerText += " _ ";
-    ans[i] = " _ ";
-  }
-  return;
-}
-
-function add_letter(letter) {
-  let temp = "";
-  if (word.includes(letter)) {
-    for (let i = 0; i < word.length; i++) {
-      if (word.charAt(i).match(letter)) {
-        ans[i] = letter;
-      }
-    }
-    for (let i = 0; i < word.length; i++) {
-      temp += ans[i];
-    }
-    container.innerText = temp;
-  } else {
-    errors++;
-    if (errors == 1) {
-      head();
-    } else if (errors == 2) {
-      body();
-    } else if (errors == 3) {
-      leftHand();
-    } else if (errors == 4) {
-      rightHand();
-    } else if (errors == 5) {
-      leftLeg();
-    } else if (errors == 6) {
-      rightLeg();
-    } else {
-      reset();
-    }
-  }
-}
-function reset() {
-  console.log("lose");
-  setTimeout(() => {
-    location.reload()
-    setword();
-  }, 20000);
-}
-
 let words = [
   "patience",
   "height",
@@ -113,3 +66,52 @@ for (let i = 0; i < 25; i++) {
 document.addEventListener("keydown", function (event) {
   add_letter(event.key.toUpperCase());
 });
+
+function setword() {
+  for (let i = 0; i < word.length; i++) {
+    container.innerText += " _ ";
+    ans[i] = " _ ";
+  }
+  return;
+}
+
+function add_letter(letter) {
+  let temp = "";
+  if (word.includes(letter)) {
+    for (let i = 0; i < word.length; i++) {
+      if (word.charAt(i).match(letter)) {
+        ans[i] = letter;
+      }
+    }
+    for (let i = 0; i < word.length; i++) {
+      temp += ans[i];
+    }
+    container.innerText = temp;
+  } else {
+    errors++;
+    if (errors == 1) {
+      head();
+    } else if (errors == 2) {
+      body();
+    } else if (errors == 3) {
+      leftHand();
+    } else if (errors == 4) {
+      rightHand();
+    } else if (errors == 5) {
+      leftLeg();
+    } else if (errors == 6) {
+      rightLeg();
+    } else {
+      reset();
+    }
+  }
+}
+function reset() {
+  console.log("lose");
+  setTimeout(() => {
+    location.reload()
+    setword();
+  }, 20000);
+}
+
+
