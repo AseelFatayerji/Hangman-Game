@@ -42,7 +42,7 @@ function reset() {
   setTimeout(() => {
     location.reload()
     setword();
-  }, 200000000);
+  }, 20000);
 }
 
 let words = [
